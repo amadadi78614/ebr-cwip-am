@@ -4,8 +4,8 @@ const CONFIG = {
   key: 'cwip',
   domain: 'CWIP & Asset Management',
   period: 'H1 FY27',
-  accent: '#14b8a6',
-  accent2: '#22d3ee',
+  accent: '#009FE3',
+  accent2: '#FF6F4D',
   source: 'CWIP & AM MBR, September 2026 review (21 Oct 2026) · status at 20 Oct 2026',
   tabs: [
     {
@@ -48,12 +48,12 @@ const CONFIG = {
           labels: ['Mobile', 'Openserve', 'Consumer', 'Properties', 'Corp Centre', 'TGIT'],
           datasets: [
             { label: 'Actual', data: [1032.1, 798.0, 306.3, 28.4, 4.3, 2.6], color: 'accent' },
-            { label: 'Corporate target', data: [1013.4, 904.4, 588.1, 82.4, 31.8, 11.3], color: 'rgba(148,163,184,.45)' },
+            { label: 'Corporate target', data: [1013.4, 904.4, 588.1, 82.4, 31.8, 11.3], color: '#C9D1DA' },
           ],
         },
         {
           type: 'rings', span: 5, title: 'Conversion rate vs target', items: [
-            { pct: 49.8, value: '49.8%', label: 'Group', sub: 'Target 59%', color: '#f59e0b' },
+            { pct: 49.8, value: '49.8%', label: 'Group', sub: 'Target 59%', color: '#E07B00' },
             { pct: 68.5, value: '68.5%', label: 'Openserve', sub: 'Corp 77% · internal 66% met', color: 'accent' },
             { pct: 37.9, value: '37.9%', label: 'Mobile', sub: 'Target 36% · met', color: 'accent2' },
           ],
@@ -77,7 +77,7 @@ const CONFIG = {
         {
           type: 'chart', kind: 'bar', span: 5, horizontal: true, title: 'Openserve conversion by region', suffix: '%', max: 100,
           labels: ['NNE', 'KZN', 'WC', 'LNM', 'GT', 'ENF', 'CIM', 'CIO'],
-          datasets: [{ label: 'Conversion', data: [83.9, 78.3, 74.9, 74.4, 70.6, 58.6, 30.5, 0], colors: ['accent', 'accent', 'accent', 'accent', 'accent', '#f59e0b', '#f87171', '#f87171'] }],
+          datasets: [{ label: 'Conversion', data: [83.9, 78.3, 74.9, 74.4, 70.6, 58.6, 30.5, 0], colors: ['accent', 'accent', 'accent', 'accent', 'accent', '#E07B00', '#D84851', '#D84851'] }],
         },
         {
           type: 'tiles', span: 5, cols: 4, title: 'Prior-year projects still open', note: 'Click for detail',

@@ -9,6 +9,30 @@ const CONFIG = {
   source: 'CWIP & AM MBR, September 2026 review (21 Oct 2026) · status at 20 Oct 2026',
   tabs: [
     {
+      id: 'since', label: 'Since last EBR', title: 'Since the last EBR',
+      blocks: [
+        {
+          type: 'hero', items: [
+            { value: '59%', label: 'Electronic verification', sub: 'Last EBR: 34%', tone: 'good' },
+            { value: '4', label: 'Technologies verified electronically', sub: 'IT HW · IT SW · Mobile RAN · POTN' },
+            { value: 'R105m', label: 'AUC reduced', sub: 'R2,208.7m opening to R2,103.1m (20 Oct)', tone: 'good' },
+            { value: '49.8%', label: 'Conversion YTD', sub: 'Above prior year · target 59%', tone: 'warn' },
+          ],
+        },
+        {
+          type: 'journey', span: 12, rows: 4, title: 'Where we were, where we are · click a row', thenLabel: 'Last EBR', nowLabel: 'Now · Sep 2026 review',
+          items: [
+            { icon: 'ScanLine', label: 'Electronic verification coverage', then: '34%', now: '59%', status: 'live', detail: { text: 'Excludes cable. IT software and Metro Ethernet & POTN at 89%.' } },
+            { icon: 'Cpu', label: 'Technologies in e-verification', then: 'IT hardware, IT software', now: '+ Mobile RAN, POTN', status: 'live', detail: { text: 'Next: NCAS – Tienet, Tuenet, Tcnet, Tnet, Tmnet.' } },
+            { icon: 'Layers', label: 'AUC balance', then: 'R2,208.7m', now: 'R2,103.1m', status: 'progress' },
+            { icon: 'DatabaseZap', label: 'Capex data extraction', then: 'In test', now: 'Auto-scheduled', status: 'test', detail: { text: 'Output file runs on schedule; reconciling against the Report 2027 download.' } },
+            { icon: 'LineChart', label: 'AUC life cycle analytics', then: 'Daily dashboard', now: 'Ready to operationalise', status: 'progress' },
+            { icon: 'Target', label: 'Capitalisation vs corporate target', then: 'FY26: >74% conversion', now: 'R459m behind', tone: 'warn', status: 'risk', detail: { text: 'YTD Sep: R2.17bn capitalised vs R2.63bn corporate target; only R43m below prior year. Mobile on target; Consumer and Openserve the gaps.' } },
+          ],
+        },
+      ],
+    },
+    {
       id: 'performance', label: 'Capital performance', title: 'Capitalisation, YTD September 2026',
       blocks: [
         {

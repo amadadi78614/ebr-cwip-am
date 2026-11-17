@@ -91,6 +91,27 @@ const CONFIG = {
       ],
     },
     {
+      id: 'analytics', owner: { name: "Dani Viljoen", role: "WNS Analytics" }, label: 'Analytics', title: 'Capital work in progress, visible every month',
+      blocks: [
+        {
+          type: 'cards', span: 7, rows: 3, cols: 1, list: true, title: 'WNS Analytics · click for detail',
+          items: [
+            { icon: 'LineChart', name: 'AUC analytics model', line: 'Open capital projects, accumulated costs, ageing', status: 'progress', team: 'Analytics', detail: { text: 'Reports on capital work in progress: open projects, costs and ageing.', rows: [['Supports', 'Timely capitalisation of completed assets'], ['Value', 'Less reporting effort, visibility of long-outstanding CWIP']] } },
+            { icon: 'Building2', name: 'Group view including BCX', line: 'One AUC view across entities', status: 'progress', team: 'Analytics + Transformation' },
+            { icon: 'TrendingUp', name: 'Capital portfolio intelligence', line: 'Capex portfolio and allocation insight', status: 'planned', team: 'Analytics', detail: { text: 'Decision intelligence use case for Capital Management from the WNS Analytics use-case map.' } },
+          ],
+        },
+        {
+          type: 'rings', span: 5, rows: 3, size: 92, title: 'Data maturity · next frontier is prescriptive and cognitive',
+          items: [
+            { pct: 100, value: '100%', label: 'Descriptive to predictive', sub: 'Hindsight, insight, foresight' },
+            { pct: 20, value: '20%', label: 'Prescriptive', sub: 'What should we do?', color: 'accent2' },
+            { pct: 5, value: '5%', label: 'Cognitive', sub: 'Controlled execution', color: 'accent2' },
+          ],
+        },
+      ],
+    },
+    {
       id: 'rpa', owner: {   "name": "Mohamed Nomani",   "role": "WNS Transformation · part of Capgemini" }, label: 'Automation', title: 'Automation is taking over verification and reporting',
       blocks: [
         {
@@ -210,7 +231,7 @@ const CONFIG = {
         },
         {
           type: 'asks', span: 4, rows: 2, title: 'Decisions requested from Telkom',
-          items: ['Agree the recovery plan to March 2027', 'Owners for CIM and CIO prior-year balances', 'Sponsor the capitalisation forecast pilot'],
+          items: ['Agree the recovery plan to March 2027', 'Owners for CIM and CIO prior-year balances', 'Enable Microsoft enterprise AI access for the Shared Services team', 'Agree the capitalisation forecast proof of value'],
         },
       ],
     },

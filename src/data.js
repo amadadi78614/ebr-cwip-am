@@ -91,7 +91,7 @@ const CONFIG = {
       ],
     },
     {
-      id: 'rpa', label: 'Automation', title: 'Automation is taking over verification and reporting',
+      id: 'rpa', owner: {   "name": "Mohamed Nomani",   "role": "WNS Transformation · part of Capgemini" }, label: 'Automation', title: 'Automation is taking over verification and reporting',
       blocks: [
         {
           type: 'cards', span: 12, cols: 3, rows: 3, title: 'Enhancement projects · click for detail',
@@ -116,28 +116,32 @@ const CONFIG = {
     },
     {
       "id": "ai",
-      "label": "AI journey",
-      "title": "WNS, part of Capgemini, is taking Telkom on the AI journey",
+      "label": "Transformation and AI",
+      "owner": {
+        "name": "Mohamed Nomani",
+        "role": "WNS Transformation · part of Capgemini"
+      },
+      "title": "From manual verification to capital foresight",
       "blocks": [
         {
           "type": "hero",
           "items": [
             {
-              "value": "Built",
-              "label": "AUC analytics model",
-              "sub": "Open projects, costs and ageing",
+              "value": "34 → 59%",
+              "label": "Electronic verification coverage",
+              "sub": "Excl. cable",
               "tone": "good"
             },
             {
-              "value": "By BU",
-              "label": "Capitalisation view",
-              "sub": "Monthly in the MBR",
+              "value": "4",
+              "label": "Technologies verified in SAP",
+              "sub": "IT hardware, software, RAN, POTN",
               "tone": "good"
             },
             {
-              "value": "Capex",
-              "label": "Extraction to production",
-              "sub": "Under way"
+              "value": "Auto",
+              "label": "Capex data extraction",
+              "sub": "Scheduled and monitored"
             },
             {
               "value": "Next",
@@ -150,25 +154,23 @@ const CONFIG = {
           "type": "track",
           "span": 12,
           "rows": 2,
-          "title": "How we take AI from idea to value · where the capitalisation forecast is today",
-          "at": 1,
-          "flag": "the capitalisation forecast"
+          "title": "Automation to AI, step by step · where the capitalisation forecast is today",
+          "at": 1
         },
         {
           "type": "waves",
           "big": true,
           "span": 12,
           "rows": 4,
-          "title": "Done, under way, next 90 days",
+          "title": "WNS Transformation portfolio · done, under way, next 90 days",
           "items": [
             {
-              "when": "Done · proven with Telkom",
-              "name": "Built and in use",
+              "when": "Done · live at Telkom",
+              "name": "Delivered",
               "tone": "done",
               "items": [
-                "AUC analytics model: CWIP, costs, ageing",
-                "Capitalisation tracked by business unit",
-                "Long-outstanding CWIP visible every month"
+                "Electronic asset verification on 4 technologies",
+                "AUC life-cycle analytics with Analytics"
               ]
             },
             {
@@ -176,9 +178,9 @@ const CONFIG = {
               "name": "Being delivered now",
               "tone": "doing",
               "items": [
-                "Operationalise AUC analytics, including BCX",
-                "Capex extraction to production",
-                "NCAS electronic verification"
+                "NCAS electronic verification (5 networks)",
+                "Capex extraction: reconcile and move to production",
+                "AUC analytics including BCX"
               ]
             },
             {
@@ -188,7 +190,7 @@ const CONFIG = {
               "items": [
                 "Prove a capitalisation forecast on AUC history",
                 "Flag projects likely to miss capitalisation",
-                "Measure forecast against actual each month"
+                "Measure forecast against actual"
               ]
             }
           ]

@@ -115,36 +115,85 @@ const CONFIG = {
       ],
     },
     {
-      id: 'ai', label: 'AI opportunities', title: 'From capital visibility to capital foresight',
-      blocks: [
+      "id": "ai",
+      "label": "AI journey",
+      "title": "WNS, part of Capgemini, is taking Telkom on the AI journey",
+      "blocks": [
         {
-          type: 'stairs', span: 5, rows: 3, title: 'CWIP automation maturity', current: 2, target: 3, targetLabel: 'Pilot',
-          levels: ['Manual', 'Reported', 'Automated', 'Predictive', 'Agent-assisted'],
-          footnote: 'AUC history plus capex extraction makes forecasting possible.',
+          "type": "hero",
+          "items": [
+            {
+              "value": "Built",
+              "label": "AUC analytics model",
+              "sub": "Open projects, costs and ageing",
+              "tone": "good"
+            },
+            {
+              "value": "By BU",
+              "label": "Capitalisation view",
+              "sub": "Monthly in the MBR",
+              "tone": "good"
+            },
+            {
+              "value": "Capex",
+              "label": "Extraction to production",
+              "sub": "Under way"
+            },
+            {
+              "value": "Next",
+              "label": "Capitalisation forecast",
+              "sub": "On AUC history"
+            }
+          ]
         },
         {
-          type: 'stepper', span: 7, rows: 3, title: 'Flagship pilot · Capitalisation forecast agent', note: 'Proposed · not live',
-          steps: [
-            { name: 'Ingest', icon: 'Database', title: 'Pull SAP PS, spend plans and milestones', points: ['Capex extraction', 'AUC history', 'Project stages'] },
-            { name: 'Forecast', icon: 'TrendingUp', title: 'Predict capitalisation by month', points: ['Per business unit', 'Per region', 'Confidence range'] },
-            { name: 'Flag', icon: 'AlertTriangle', title: 'Flag projects that will miss', points: ['FNLD ageing', 'Holds', 'Prior-year balances'] },
-            { name: 'Recommend', icon: 'Lightbulb', title: 'Recommend who acts, and how', points: ['Settlement follow-up', 'Owner per project'] },
-            { name: 'Approve', icon: 'UserCheck', title: 'Finance reviews and approves', points: ['Human decision', 'Audit trail'] },
-            { name: 'Report', icon: 'Presentation', title: 'Draft the MBR commentary', points: ['Validated metrics', 'Variance narrative'] },
-          ],
+          "type": "track",
+          "span": 12,
+          "rows": 2,
+          "title": "How we take AI from idea to value · where the capitalisation forecast is today",
+          "at": 1,
+          "flag": "the capitalisation forecast"
         },
         {
-          type: 'cards', span: 12, cols: 6, rows: 2, agent: true, title: 'Agent opportunities · click for detail',
-          items: [
-            { icon: 'Layers', name: 'AUC lifecycle', line: 'Ageing alerts, settlement', status: 'proposed', detail: { rows: [['Input', 'AUC balances, project stages'], ['Measure', 'Ageing reduction']] } },
-            { icon: 'ScanLine', name: 'Asset verification', line: 'Match and rank exceptions', status: 'proposed', detail: { rows: [['Input', 'Asset register, technology records'], ['Measure', 'Match accuracy, effort']] } },
-            { icon: 'BarChart3', name: 'Depreciation', line: 'Scenario forecasts', status: 'proposed', detail: { rows: [['Input', 'Asset lives, network simplification'], ['Measure', 'Forecast accuracy']] } },
-            { icon: 'ShieldAlert', name: 'FNLD risk', line: 'Early warning per project', status: 'proposed', detail: { rows: [['Input', 'Status, funding, carry-over'], ['Measure', 'Warning precision']] } },
-            { icon: 'PauseCircle', name: 'Projects on hold', line: 'Classify hold reasons', status: 'proposed', detail: { rows: [['Input', 'Hold reasons, vendor issues'], ['Measure', 'Resolution time']] } },
-            { icon: 'FileCheck2', name: 'Capex governance', line: 'Policy flags with evidence', status: 'proposed', detail: { rows: [['Input', 'Approval rules, audit requirements'], ['Measure', 'Control coverage']] } },
-          ],
-        },
-      ],
+          "type": "waves",
+          "big": true,
+          "span": 12,
+          "rows": 4,
+          "title": "Done, under way, next 90 days",
+          "items": [
+            {
+              "when": "Done · proven with Telkom",
+              "name": "Built and in use",
+              "tone": "done",
+              "items": [
+                "AUC analytics model: CWIP, costs, ageing",
+                "Capitalisation tracked by business unit",
+                "Long-outstanding CWIP visible every month"
+              ]
+            },
+            {
+              "when": "Under way",
+              "name": "Being delivered now",
+              "tone": "doing",
+              "items": [
+                "Operationalise AUC analytics, including BCX",
+                "Capex extraction to production",
+                "NCAS electronic verification"
+              ]
+            },
+            {
+              "when": "Next 90 days",
+              "name": "What we will prove next",
+              "tone": "next",
+              "items": [
+                "Prove a capitalisation forecast on AUC history",
+                "Flag projects likely to miss capitalisation",
+                "Measure forecast against actual each month"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       id: 'next', label: 'Way forward', title: 'Prove the value, then scale',

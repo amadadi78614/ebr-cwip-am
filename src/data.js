@@ -4,8 +4,8 @@ const CONFIG = {
   key: 'cwip',
   domain: 'Asset Management & Project Accounting',
   period: 'H1 FY27',
-  accent: '#009FE3',
-  accent2: '#FF6F4D',
+  accent: '#0070AD',
+  accent2: '#009FE3',
   source: 'AM & PA EBR · September 2026',
   tabs: [
     {

@@ -9,6 +9,10 @@ const CONFIG = {
   source: 'AM & PA EBR · September 2026',
   tabs: [
     {
+      id: 'agenda', label: 'Agenda', title: "Asset Management and Project Accounting \u00b7 Executive Business Review",
+      blocks: [ { type: 'agenda', span: 12, rows: 6, items: [{"label": "Since last EBR", "icon": "History", "tab": "since", "line": "97% asset verification · 59% electronic · capex intensity down"}, {"label": "Capital performance", "icon": "Target", "tab": "performance", "line": "R2,171.7m capitalised YTD · 49.8% conversion vs 59% target"}, {"label": "Conversion and capex", "icon": "LineChart", "tab": "trends", "line": "Conversion vs prior year · capex spend down 22.5%"}, {"label": "Capital portfolio", "icon": "Layers", "tab": "portfolio", "line": "Total AUC R2,180.8m · CWIP composition and AUC status"}, {"label": "Business units", "icon": "Building2", "tab": "units", "line": "Where the capital sits, by business unit"}, {"label": "Analytics", "icon": "BarChart3", "tab": "analytics", "line": "Capital work in progress, visible every month", "who": "Capgemini Analytics"}, {"label": "Automation", "icon": "Bot", "tab": "rpa", "line": "Automation taking over verification and reporting", "who": "Capgemini Transformation"}, {"label": "Transformation and AI", "icon": "Sparkles", "tab": "ai", "line": "From manual verification to capital foresight", "who": "Capgemini Transformation"}, {"label": "Way forward", "icon": "Route", "tab": "next", "line": "Prove the value, then scale · decisions requested"}] } ],
+    },
+    {
       id: 'since', label: 'Since last EBR', title: 'Optimise capital locked in process',
       blocks: [
         {

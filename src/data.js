@@ -10,7 +10,7 @@ const CONFIG = {
   tabs: [
     {
       id: 'agenda', label: 'Agenda', title: "Asset Management and Project Accounting \u00b7 Executive Business Review",
-      blocks: [ { type: 'agenda', span: 12, rows: 6, items: [{"label": "Since last EBR", "icon": "History", "tab": "since", "line": "97% asset verification · 59% electronic · capex intensity down"}, {"label": "Capital performance", "icon": "Target", "tab": "performance", "line": "R2,171.7m capitalised YTD · 49.8% conversion vs 59% target"}, {"label": "Conversion and capex", "icon": "LineChart", "tab": "trends", "line": "Conversion vs prior year · capex spend down 22.5%"}, {"label": "Capital portfolio", "icon": "Layers", "tab": "portfolio", "line": "Total AUC R2,180.8m · CWIP composition and AUC status"}, {"label": "Business units", "icon": "Building2", "tab": "units", "line": "Where the capital sits, by business unit"}, {"label": "Analytics", "icon": "BarChart3", "tab": "analytics", "line": "Capital work in progress, visible every month", "who": "Capgemini Analytics"}, {"label": "Automation", "icon": "Bot", "tab": "rpa", "line": "Automation taking over verification and reporting", "who": "Capgemini Transformation"}, {"label": "Transformation and AI", "icon": "Sparkles", "tab": "ai", "line": "From manual verification to capital foresight", "who": "Capgemini Transformation"}, {"label": "Way forward", "icon": "Route", "tab": "next", "line": "Prove the value, then scale · decisions requested"}] } ],
+      blocks: [ { type: 'agenda', span: 12, rows: 6, items: [{"label": "Since last EBR", "icon": "History", "tab": "since", "line": "97% asset verification · 59% electronic · capex intensity down"}, {"label": "Capital performance", "icon": "Target", "tab": "performance", "line": "R2,171.7m capitalised YTD Sep · capex spend down 22.5%"}, {"label": "Capital portfolio", "icon": "Layers", "tab": "portfolio", "line": "Total AUC R2,180.8m · CWIP composition and AUC status"}, {"label": "Business units", "icon": "Building2", "tab": "units", "line": "Where the capital sits at 24 Nov · group conversion 52.9% vs 60.3%"}, {"label": "Asset verification", "icon": "ScanLine", "tab": "verification", "line": "97% verified · electronic coverage 34% to 59%"}, {"label": "Automation", "icon": "Bot", "tab": "rpa", "line": "Automation taking over verification and reporting", "who": "Capgemini Transformation"}, {"label": "Transformation and AI", "icon": "Sparkles", "tab": "ai", "line": "From manual verification to capital foresight", "who": "Capgemini Transformation"}, {"label": "Analytics", "icon": "BarChart3", "tab": "analytics", "line": "Capital work in progress, visible every month", "who": "Capgemini Analytics"}, {"label": "Way forward", "icon": "Route", "tab": "next", "line": "Prove the value, then scale · decisions requested"}] } ],
     },
     {
       id: 'since', label: 'Since last EBR', title: 'Optimise capital locked in process',
@@ -48,7 +48,7 @@ const CONFIG = {
           ],
         },
         {
-          type: 'chart', kind: 'bar', span: 7, title: 'Capitalised vs corporate target', note: 'R million', suffix: 'm',
+          type: 'chart', kind: 'bar', span: 5, title: 'Capitalised vs corporate target', note: 'R million', suffix: 'm',
           labels: ['Mobile', 'Openserve', 'Consumer', 'Properties', 'Corp Centre', 'TGIT'],
           datasets: [
             { label: 'Actual', data: [1032.1, 798.0, 306.3, 28.4, 4.3, 2.6], color: 'accent' },
@@ -56,7 +56,13 @@ const CONFIG = {
           ],
         },
         {
-          type: 'rings', span: 5, title: 'Conversion rate vs target', items: [
+          type: 'chart', kind: 'bar', span: 3, title: 'Capex spend and intensity', note: 'R million', suffix: 'm',
+          labels: ['H1 FY26 · 13.0%', 'H1 FY27 · 9.9%'],
+          datasets: [{ label: 'Capex', data: [2870, 2223], colors: ['#B8C2CC', 'accent'] }],
+          footnote: '↓22.5% capex spend · intensity 13.0% to 9.9%',
+        },
+        {
+          type: 'rings', span: 4, title: 'Conversion rate vs target', items: [
             { pct: 49.8, value: '49.8%', label: 'Group', sub: 'Target 59%', color: '#E07B00' },
             { pct: 68.5, value: '68.5%', label: 'Openserve', sub: 'Corp 77% · internal 66% met', color: 'accent' },
             { pct: 37.9, value: '37.9%', label: 'Mobile', sub: 'Target 36% · met', color: 'accent2' },
@@ -65,38 +71,31 @@ const CONFIG = {
       ],
     },
     {
-      id: 'trends', label: 'Conversion and capex', title: 'Electronic Asset Verification accelerates; capex intensity down',
+      id: 'verification', label: 'Asset verification', title: 'Asset verification, H1 FY27',
       blocks: [
         {
-          type: 'chart', kind: 'line', span: 6, rows: 3, title: 'Conversion %, FY27 vs prior year', suffix: '%', max: 80,
-          labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
-          datasets: [
-            { label: 'Actual FY27', data: [22, 35, 37, 41, 47, 50, null, null, null, null, null, null], color: 'accent', fill: true },
-            { label: 'Actual prior year', data: [8, 26, 35, 39, 41, 49, 51, 54, 54, 54, 59, 74], color: '#B8C2CC', dashed: true },
+          type: 'hero', items: [
+            { value: '97%', label: 'Current asset verification', sub: 'Current cycle · 3 pp to full coverage', tone: 'good' },
+            { value: '59%', label: 'Electronic asset verification', sub: 'Last EBR: 34% · excludes cable', tone: 'good' },
+            { value: '89%', label: 'IT software · Metro Ethernet / POTN', sub: 'Electronic coverage' },
+            { value: '4', label: 'Technologies verified in SAP', sub: 'IT hardware, software, RAN, POTN' },
           ],
-          footnote: 'FY27 tracking slightly above prior year to September · prior year closed at 74%',
         },
         {
-          type: 'chart', kind: 'bar', span: 3, rows: 3, title: 'Capex spend and intensity', note: 'R million', suffix: 'm',
-          labels: ['H1 FY26 · 13.0%', 'H1 FY27 · 9.9%'],
-          datasets: [{ label: 'Capex', data: [2870, 2223], colors: ['#B8C2CC', 'accent'] }],
-          footnote: '↓22.5% capex spend · intensity 13.0% to 9.9%',
-        },
-        {
-          type: 'image', span: 3, rows: 3, title: 'Asset base value per BU', src: '/asset-base-bu.png', alt: 'Asset base value per business unit: Consumer, Corporate, Openserve and Properties',
-          footnote: 'Consumer · Corporate · Openserve · Properties',
-        },
-        {
-          type: 'chart', kind: 'bar', span: 6, rows: 3, title: 'Electronic Asset Verification accelerates', note: '+25 percentage points', suffix: '%', max: 100,
+          type: 'chart', kind: 'bar', span: 4, title: 'Electronic asset verification', note: '+25 percentage points', suffix: '%', max: 100,
           labels: ['Previous review', 'H1 FY27'],
           datasets: [{ label: 'Coverage', data: [34, 59], colors: ['#B8C2CC', 'accent'] }],
-          footnote: '34% to 59% reported · latest figure excludes cable',
+          footnote: '34% to 59% · latest figure excludes cable',
         },
         {
-          type: 'chart', kind: 'bar', span: 6, rows: 3, horizontal: true, title: 'Technology coverage', note: 'Latest review', suffix: '%', max: 100,
+          type: 'chart', kind: 'bar', span: 4, horizontal: true, title: 'Technology coverage', note: 'Latest review', suffix: '%', max: 100,
           labels: ['IT hardware', 'IT software', 'Metro Ethernet / POTN'],
           datasets: [{ label: 'Coverage', data: [26, 89, 89], colors: ['#FECB5E', 'accent', 'accent2'] }],
           footnote: 'MSAN/ISAM and GPON classes reported verified',
+        },
+        {
+          type: 'image', span: 4, title: 'Asset base value per BU', src: '/asset-base-bu.png', alt: 'Asset base value per business unit: Consumer, Corporate, Openserve and Properties',
+          footnote: 'Consumer · Corporate · Openserve · Properties',
         },
       ],
     },
@@ -124,23 +123,24 @@ const CONFIG = {
       ],
     },
     {
-      id: 'units', label: 'Business units', title: 'Where the capital sits, 20 October 2026',
+      id: 'units', label: 'Business units', title: 'Where the capital sits, 24 November 2026',
       blocks: [
         {
-          type: 'units', span: 7, rows: 2, title: 'Select a business unit', note: 'R million · target = FY27 corporate conversion',
+          type: 'units', span: 7, rows: 2, title: 'Select a business unit', note: 'R million · target = November 2026 conversion target',
           data: {
-            Openserve: { conv: 67.3, target: 78, stats: [['Spend', 'R867.5m'], ['Capitalised', 'R819.9m'], ['AUC', 'R393.2m'], ['FNLD', 'R57.3m'], ['On hold', 'R76.6m']] },
-            Mobile: { conv: 40.2, target: 64, stats: [['Spend', 'R1,175.7m'], ['Capitalised', 'R1,064.6m'], ['AUC', 'R1,584.4m'], ['FNLD', 'R542.5m'], ['On hold', 'R122.6m']] },
-            Consumer: { conv: 96.8, target: 91, stats: [['Spend', 'R3.2m'], ['Capitalised', 'R309.1m'], ['AUC', 'R10.2m'], ['FNLD', 'R5.8m'], ['On hold', 'R1.8m']] },
-            'Telkom Properties': { conv: 46.6, target: 72, stats: [['Spend', 'R17.7m'], ['Capitalised', 'R30.2m'], ['AUC', 'R33.8m'], ['FNLD', 'R0.7m'], ['On hold', 'R0.0m']] },
-            TGIT: { conv: 3.1, target: 26, stats: [['Spend', 'R67.2m'], ['Capitalised', 'R2.6m'], ['AUC', 'R80.6m'], ['FNLD', 'R0.0m'], ['On hold', 'R3.1m']] },
-            Group: { conv: 51.4, target: 69, stats: [['Spend', 'R2,132.4m'], ['Capitalised', 'R2,230.7m'], ['AUC', 'R2,103.1m'], ['FNLD', 'R606.4m'], ['On hold', 'R204.2m']] },
+            Openserve: { conv: 67.9, target: 73.3, stats: [['Spend', 'R987.3m'], ['Capitalised', 'R909.4m'], ['AUC', 'R422.2m'], ['FNLD', 'R51.1m'], ['On hold', 'R50.2m']] },
+            Mobile: { conv: 46.2, target: 50.0, stats: [['Spend', 'R1,434.1m'], ['Capitalised', 'R1,344.2m'], ['AUC', 'R1,562.8m'], ['FNLD', 'R512.5m'], ['On hold', 'R122.6m']] },
+            Consumer: { conv: 59.4, target: 92.4, stats: [['Spend', 'R218.7m'], ['Capitalised', 'R317.4m'], ['AUC', 'R217.4m'], ['FNLD', 'R0.0m'], ['On hold', 'R1.8m']] },
+            'Telkom Properties': { conv: 48.0, target: 60.4, stats: [['Spend', 'R16.0m'], ['Capitalised', 'R30.3m'], ['AUC', 'R32.0m'], ['FNLD', 'R0.4m'], ['On hold', 'R0.1m']] },
+            'Corporate Centre': { conv: 80.6, target: 86.4, stats: [['Spend', 'R1.1m'], ['Capitalised', 'R4.3m'], ['AUC', 'R1.0m'], ['FNLD', 'R0.0m'], ['On hold', 'R0.0m']] },
+            TGIT: { conv: 3.1, target: 2.9, stats: [['Spend', 'R67.8m'], ['Capitalised', 'R2.6m'], ['AUC', 'R81.2m'], ['FNLD', 'R0.0m'], ['On hold', 'R3.1m']] },
+            Group: { conv: 52.9, target: 60.3, stats: [['Spend', 'R2,725.0m'], ['Capitalised', 'R2,608.2m'], ['AUC', 'R2,316.6m'], ['FNLD', 'R563.9m'], ['On hold', 'R177.9m']] },
           },
         },
         {
-          type: 'chart', kind: 'bar', span: 5, horizontal: true, title: 'Openserve conversion by region', suffix: '%', max: 100,
-          labels: ['NNE', 'KZN', 'WC', 'LNM', 'GT', 'ENF', 'CIM', 'CIO'],
-          datasets: [{ label: 'Conversion', data: [83.9, 78.3, 74.9, 74.4, 70.6, 58.6, 30.5, 0], colors: ['accent', 'accent', 'accent', 'accent', 'accent', '#E07B00', '#D84851', '#D84851'] }],
+          type: 'chart', kind: 'bar', span: 5, horizontal: true, title: 'Openserve conversion by region', note: '24 Nov 2026', suffix: '%', max: 100,
+          labels: ['NNE', 'WC', 'KZN', 'LNM', 'GT', 'ENF', 'CIM', 'CIO'],
+          datasets: [{ label: 'Conversion', data: [82.0, 76.9, 76.6, 75.7, 70.6, 59.8, 30.3, 0], colors: ['accent', 'accent', 'accent', 'accent', 'accent', '#E07B00', '#D84851', '#D84851'] }],
         },
         {
           type: 'tiles', span: 5, cols: 4, title: 'Prior-year projects still open', note: 'Click for detail',
@@ -300,4 +300,6 @@ const CONFIG = {
     },
   ],
 }
+const ORDER = ['agenda', 'since', 'performance', 'portfolio', 'units', 'verification', 'rpa', 'ai', 'analytics', 'next']
+CONFIG.tabs = ORDER.map(id => CONFIG.tabs.find(t => t.id === id))
 export default CONFIG

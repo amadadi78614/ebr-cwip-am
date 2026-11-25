@@ -466,3 +466,23 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 
 .arch-core-ico{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);margin:6px auto}
 .arch-core-sub{display:block;font-size:11.5px;color:rgba(255,255,255,.88);text-align:center;line-height:1.35;max-width:180px;margin:0 auto 4px}
+
+/* Data maturity staircase */
+.mat{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.mat-steps{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr) 34px;gap:12px;align-items:stretch}
+.mat-col{display:flex;flex-direction:column;align-items:center;gap:6px;min-height:0;animation:pop .6s cubic-bezier(.2,.8,.2,1) both}
+.mat-gauge{width:58px;height:58px;flex-shrink:0}
+.mat-box{flex:1;width:100%;min-height:0;display:flex;flex-direction:column;gap:4px;padding:12px 12px;border-radius:14px;background:#F8FAFC;border:1px solid #E3E8EF;border-top:4px solid #C9D1DA;overflow:hidden}
+.mat-col.done .mat-box{border-top-color:#0E9F6E}
+.mat-col.now .mat-box{border-top-color:var(--accent);background:#EEF6FC;box-shadow:0 10px 24px -14px var(--accent)}
+.mat-box b{font-size:14px;letter-spacing:-.2px}
+.mat-box em{font-size:12px;font-style:italic;color:var(--accent);font-weight:600}
+.mat-box p{margin:0;font-size:11.5px;color:#4A5563;line-height:1.35}
+.mat-tools{margin-top:auto;display:flex;flex-wrap:wrap;gap:4px}
+.mat-tools span{font-size:10.5px;font-weight:600;padding:3px 7px;border-radius:999px;background:#fff;border:1px solid #E3E8EF;color:#0E9F6E}
+.mat-col.now .mat-tools span,.mat-col:not(.done) .mat-tools span{color:var(--accent)}
+.mat-arrow{position:relative;border-radius:8px;background:linear-gradient(0deg,rgba(0,112,173,.15),var(--accent));display:flex;align-items:center;justify-content:center;clip-path:polygon(50% 0,100% 14px,78% 14px,78% 100%,22% 100%,22% 14px,0 14px)}
+.mat-arrow span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;padding-top:16px}
+.mat-bands{display:grid;gap:12px;flex-shrink:0}
+.mat-bands span{text-align:center;font-size:12px;font-weight:700;color:#4A5563;padding:6px;border-radius:999px;background:#EEF1F4}
+.mat-bands span.ai{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}

@@ -115,7 +115,7 @@ const AI_PATH = {
 }
 
 const ANALYTICS = {
-  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: '6 months in review: building a data-driven finance engine',
+  id: 'analytics', label: '6 months in review', owner: finAna.owner, title: '6 months in review: building a data-driven finance engine',
   blocks: [
     {
       type: 'cards', span: 4, cols: 1, list: true, title: 'Completed · click for detail',
@@ -155,6 +155,22 @@ const ANALYTICS = {
   ],
 }
 
+const MATURITY = {
+  id: 'maturity', label: 'Data maturity', owner: finAna.owner, title: 'What we are focusing on next: the next frontier of data analytics',
+  blocks: [
+    {
+      type: 'maturity', span: 12, title: 'Progressing the data maturity curve within Telkom, as a trusted implementation partner', split: 3, bands: ['Data', 'Data + Artificial Intelligence'],
+      items: [
+        { name: 'Descriptive', q: 'What happened?', pct: 100, text: 'Data provides hindsight', tools: ['Reports', 'Dashboards'] },
+        { name: 'Diagnostic', q: 'Why did it happen?', pct: 100, text: 'Analysis provides insight', tools: ['Reports', 'Dashboards'] },
+        { name: 'Predictive', q: 'What will happen?', pct: 100, text: 'Models provide foresight', tools: ['Reports', 'Dashboards', 'AI / ML'] },
+        { name: 'Prescriptive', q: 'What should we do about it?', pct: 20, text: 'Intelligence framework provides rapid insight, recommendations and decisions', tools: ['Reports', 'Dashboards', 'AI / ML', 'Scenario tools', 'Agentic framework'] },
+        { name: 'Cognitive', q: 'Controlled execution', pct: 5, text: 'Intelligence framework provides controlled execution autonomy through agentic layers', tools: ['Agentic framework'] },
+      ],
+    },
+  ],
+}
+
 const area = (key, domain, page) => ({ key, domain, period: 'H1 FY27', accent: '#0070AD', accent2: '#009FE3', source: 'Capgemini ' + domain + ' · H1 FY27', tabs: [page] })
 
-export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Fixed Assets & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), area('analytics', 'Analytics', ANALYTICS), { ...area('ai', 'AI', AI_LEARNED), tabs: [AI_LEARNED, AI_POC, AI_PATH] }]
+export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Fixed Assets & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), { ...area('analytics', 'Analytics', ANALYTICS), tabs: [ANALYTICS, MATURITY] }, { ...area('ai', 'AI', AI_LEARNED), tabs: [AI_LEARNED, AI_POC, AI_PATH] }]

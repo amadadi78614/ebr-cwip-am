@@ -1,15 +1,15 @@
-// CWIP & Asset Management EBR. Source: CWIP & AM MBR, September 2026 review (deck 21 Oct 2026),
+// CWIP & Fixed Assets EBR. Source: CWIP & AM MBR, September 2026 review (deck 21 Oct 2026),
 // capitalisation status at 20 Oct 2026; minutes 23 Sep 2026; Sept placemat (e-verification coverage).
 const CONFIG = {
   key: 'cwip',
-  domain: 'Asset Management & Project Accounting',
+  domain: 'Fixed Assets & Project Accounting',
   period: 'H1 FY27',
   accent: '#0070AD',
   accent2: '#009FE3',
   source: 'AM & PA EBR · September 2026',
   tabs: [
     {
-      id: 'agenda', label: 'Agenda', title: "Asset Management and Project Accounting \u00b7 Executive Business Review",
+      id: 'agenda', label: 'Agenda', title: "Fixed Assets and Project Accounting \u00b7 Executive Business Review",
       blocks: [ { type: 'agenda', span: 12, rows: 6, items: [{"label": "Since last EBR", "icon": "History", "tab": "since", "line": "97% asset verification · 59% electronic · capex intensity down"}, {"label": "Capital performance", "icon": "Target", "tab": "performance", "line": "R2,171.7m capitalised YTD Sep · capex spend down 22.5%"}, {"label": "Capital portfolio", "icon": "Layers", "tab": "portfolio", "line": "Total AUC R2,180.8m · CWIP composition and AUC status"}, {"label": "Business units", "icon": "Building2", "tab": "units", "line": "Where the capital sits at 24 Nov · group conversion 52.9% vs 60.3%"}, {"label": "Asset verification", "icon": "ScanLine", "tab": "verification", "line": "97% verified · electronic coverage 34% to 59%"}, {"label": "Automation", "icon": "Bot", "tab": "rpa", "line": "Automation taking over verification and reporting", "who": "Capgemini Transformation"}, {"label": "Transformation and AI", "icon": "Sparkles", "tab": "ai", "line": "From manual verification to capital foresight", "who": "Capgemini Transformation"}, {"label": "Analytics", "icon": "BarChart3", "tab": "analytics", "line": "Capital work in progress, visible every month", "who": "Capgemini Analytics"}, {"label": "Way forward", "icon": "Route", "tab": "next", "line": "Prove the value, then scale · decisions requested"}] } ],
     },
     {

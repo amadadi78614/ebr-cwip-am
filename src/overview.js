@@ -21,9 +21,9 @@ const OVERVIEW = {
         {
           type: 'agenda', span: 12, rows: 5, items: [
             { label: 'Finance & Accounting', icon: 'Wallet', tab: 'finance/agenda', line: 'Since last EBR, H1 highlights, H2 focus areas, way forward', who: 'Claude Naidu' },
-            { label: 'Asset Management & Project Accounting', icon: 'Landmark', tab: 'cwip/agenda', line: 'Capital performance, portfolio, business units, asset verification', who: 'Hannes Joubert' },
-            { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation for Finance and Asset Management, done, under way, next', who: 'Mohamed Nomani' },
-            { label: 'Analytics', icon: 'BarChart3', tab: 'analytics/analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
+            { label: 'Fixed Assets & Project Accounting', icon: 'Landmark', tab: 'cwip/agenda', line: 'Capital performance, portfolio, business units, asset verification', who: 'Hannes Joubert' },
+            { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation for Finance and Fixed Assets, done, under way, next', who: 'Mohamed Nomani' },
+            { label: 'Analytics', icon: 'BarChart3', tab: 'analytics/analytics', line: 'Models and dashboards for Finance and Fixed Assets', who: 'Dani Viljoen' },
             { label: 'AI', icon: 'BrainCircuit', tab: 'ai/learned', line: 'What we learned, the Microsoft POC and enablement, and the path to value', who: 'Mohamed and Dani' },
           ],
         },

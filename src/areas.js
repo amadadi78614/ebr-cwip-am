@@ -28,10 +28,10 @@ const compact = b => ({ ...b, items: b.items.map(({ metric, team, ...x }) => ({ 
 const finRpa = tab(FIN, 'rpa'), amRpa = tab(AM, 'rpa'), finAna = tab(FIN, 'analytics'), amAna = tab(AM, 'analytics')
 
 const TRANSFORMATION = {
-  id: 'transformation', label: 'Automation', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'Automation to AI across Finance and Asset Management',
+  id: 'transformation', label: 'Automation', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'Automation to AI across Finance and Fixed Assets',
   blocks: [
     { ...compact(blk(finRpa, 'cards')), span: 7, rows: 3, cols: 2, list: true, title: 'Finance & Accounting · 8 interventions · ~20 hours a month targeted' },
-    { ...blk(amRpa, 'cards'), span: 5, rows: 3, cols: 1, list: true, title: 'Asset Management · electronic verification 34% to 59%' },
+    { ...blk(amRpa, 'cards'), span: 5, rows: 3, cols: 1, list: true, title: 'Fixed Assets · electronic verification 34% to 59%' },
     {
       type: 'waves', span: 12, rows: 2, title: 'Automation to AI · done, under way, next',
       items: [
@@ -115,11 +115,11 @@ const AI_PATH = {
 }
 
 const ANALYTICS = {
-  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Asset Management',
+  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Fixed Assets',
   blocks: [
     { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
     { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
-    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Asset Management · capital work in progress' },
+    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Fixed Assets · capital work in progress' },
     {
       type: 'track', span: 12, rows: 1, at: 3, title: 'Data maturity · hindsight to controlled execution · next frontier: prescriptive, then cognitive (agentic)',
       steps: ['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive · agentic'],
@@ -129,4 +129,4 @@ const ANALYTICS = {
 
 const area = (key, domain, page) => ({ key, domain, period: 'H1 FY27', accent: '#0070AD', accent2: '#009FE3', source: 'Capgemini ' + domain + ' · H1 FY27', tabs: [page] })
 
-export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Asset Management & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), area('analytics', 'Analytics', ANALYTICS), { ...area('ai', 'AI', AI_LEARNED), tabs: [AI_LEARNED, AI_POC, AI_PATH] }]
+export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Fixed Assets & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), area('analytics', 'Analytics', ANALYTICS), { ...area('ai', 'AI', AI_LEARNED), tabs: [AI_LEARNED, AI_POC, AI_PATH] }]

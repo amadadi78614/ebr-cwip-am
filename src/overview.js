@@ -8,7 +8,7 @@ const OVERVIEW = {
   source: 'Telkom Shared Services · H1 FY27 EBR',
   tabs: [
     {
-      id: 'agenda', label: 'Overview', title: 'F&A and Fixed Assets · H1 FY27 Executive Business Review',
+      id: 'agenda', label: 'Overview', title: 'Finance and Accounting and Fixed Assets · H1 FY27 Executive Business Review',
       blocks: [
         {
           type: 'hero', items: [

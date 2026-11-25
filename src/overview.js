@@ -1,7 +1,7 @@
 // Executive overview: entry page for the combined Telkom Shared Services EBR.
 const OVERVIEW = {
   key: 'overview',
-  domain: 'Executive overview',
+  domain: 'Overview',
   period: 'H1 FY27',
   accent: '#0070AD',
   accent2: '#009FE3',
@@ -19,11 +19,12 @@ const OVERVIEW = {
           ],
         },
         {
-          type: 'agenda', span: 12, rows: 4, items: [
+          type: 'agenda', span: 12, rows: 5, items: [
             { label: 'Finance & Accounting', icon: 'Wallet', tab: 'finance/agenda', line: 'Since last EBR, H1 highlights, H2 focus areas, way forward', who: 'Claude Naidu' },
             { label: 'Asset Management & Project Accounting', icon: 'Landmark', tab: 'cwip/agenda', line: 'Capital performance, portfolio, business units, asset verification', who: 'Hannes Joubert' },
-            { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation and AI for Finance and Asset Management', who: 'Mohamed Nomani' },
+            { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation for Finance and Asset Management, done, under way, next', who: 'Mohamed Nomani' },
             { label: 'Analytics', icon: 'BarChart3', tab: 'analytics/analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
+            { label: 'AI', icon: 'BrainCircuit', tab: 'ai/ai', line: 'Enterprise AI POC with Microsoft, next propositions and what we learned', who: 'Mohamed and Dani' },
           ],
         },
       ],

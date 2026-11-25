@@ -44,15 +44,15 @@ const TRANSFORMATION = {
 }
 
 const AI_PROPOSITIONS = {
-  id: 'ai', label: 'AI propositions', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'Microsoft AI solution leads the AI propositions',
+  id: 'ai', label: 'AI', owner: { name: 'Mohamed Nomani · Dani Viljoen', role: 'Capgemini Transformation and Analytics' }, title: 'AI at Telkom Shared Services: one Capgemini story',
   blocks: [
     {
-      type: 'arch', span: 8, rows: 6, title: 'Microsoft AI solution · contract operationalisation in SAP · click an outcome',
+      type: 'arch', span: 8, rows: 5, title: 'Enterprise AI POC with Microsoft · SAP contract operationalisation · click an outcome',
       sources: [
         { icon: 'FileText', name: 'Signed contracts', sub: 'Real Telkom contracts' },
         { icon: 'Database', name: 'SAP data', sub: 'Vendors and conditions' },
       ],
-      core: { kicker: 'Microsoft Foundry · built by Capgemini', name: 'ContractOps', icon: 'BrainCircuit', sub: 'Built · moving to Microsoft POC', status: 'progress', statusText: 'Microsoft POC' },
+      core: { kicker: 'Capgemini Transformation + Analytics', name: 'ContractOps', icon: 'BrainCircuit', sub: 'Built · moving to Microsoft POC', status: 'progress', statusText: 'Microsoft POC' },
       outputs: [
         { icon: 'ScanText', name: 'Terms extracted', metric: 'Rates, dates', detail: { text: 'AI reads each signed contract and pulls out pricing, escalations, dates and obligations into a structured record.', rows: [['Today', 'Read and keyed by hand'], ['Control', 'Person confirms each extract']] } },
         { icon: 'Settings2', name: 'SAP set-up', metric: 'For approval', detail: { text: 'Prepares the SAP contract and condition set-up from the extracted terms, for a person to approve before it is loaded.', rows: [['Benefit', 'Faster, consistent contract set-up']] } },
@@ -61,7 +61,7 @@ const AI_PROPOSITIONS = {
       ],
     },
     {
-      type: 'cards', span: 4, rows: 6, cols: 1, list: true, title: 'Next AI propositions · click for detail',
+      type: 'cards', span: 4, rows: 5, cols: 1, list: true, title: 'Next AI propositions · click for detail',
       items: [
         { icon: 'GitCompareArrows', name: 'AI on recon exceptions', line: 'F&A · AI explains the breaks', status: 'planned', statusText: 'H2 proof',
           detail: { text: 'Rules-based matching first, then AI on the exceptions: likely cause, suggested journal, human approval before posting.', rows: [['Starts with', 'One account, after SingleView and FAM balances are live']] } },
@@ -74,19 +74,6 @@ const AI_PROPOSITIONS = {
         { icon: 'FileText', name: 'MBR commentary drafts', line: 'AM and F&A · people sign off', status: 'planned', statusText: '1–3 years',
           detail: { text: 'Drafts the monthly variance commentary from the capital and finance data; the accountant edits and approves.' } },
       ],
-    },
-  ],
-}
-
-const ANALYTICS = {
-  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics moving up the data maturity curve, into AI',
-  blocks: [
-    { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
-    { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
-    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Asset Management · capital work in progress' },
-    {
-      type: 'track', span: 12, rows: 1, at: 3, title: 'Data maturity · hindsight to controlled execution · next frontier: prescriptive, then cognitive (agentic)',
-      steps: ['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive · agentic'],
     },
     {
       type: 'cards', span: 12, rows: 2, cols: 3, list: true, title: 'What we learned since June · AI in a governed enterprise · click for detail',
@@ -102,6 +89,19 @@ const ANALYTICS = {
   ],
 }
 
+const ANALYTICS = {
+  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Asset Management',
+  blocks: [
+    { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
+    { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
+    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Asset Management · capital work in progress' },
+    {
+      type: 'track', span: 12, rows: 1, at: 3, title: 'Data maturity · hindsight to controlled execution · next frontier: prescriptive, then cognitive (agentic)',
+      steps: ['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive · agentic'],
+    },
+  ],
+}
+
 const area = (key, domain, page) => ({ key, domain, period: 'H1 FY27', accent: '#0070AD', accent2: '#009FE3', source: 'Capgemini ' + domain + ' · H1 FY27', tabs: [page] })
 
-export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Asset Management & Project Accounting' }, { ...area('transformation', 'Transformation', TRANSFORMATION), tabs: [TRANSFORMATION, AI_PROPOSITIONS] }, area('analytics', 'Analytics', ANALYTICS)]
+export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Asset Management & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), area('analytics', 'Analytics', ANALYTICS), area('ai', 'AI', AI_PROPOSITIONS)]

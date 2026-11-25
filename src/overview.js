@@ -24,7 +24,7 @@ const OVERVIEW = {
             { label: 'Asset Management & Project Accounting', icon: 'Landmark', tab: 'cwip/agenda', line: 'Capital performance, portfolio, business units, asset verification', who: 'Hannes Joubert' },
             { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation for Finance and Asset Management, done, under way, next', who: 'Mohamed Nomani' },
             { label: 'Analytics', icon: 'BarChart3', tab: 'analytics/analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
-            { label: 'AI', icon: 'BrainCircuit', tab: 'ai/ai', line: 'Enterprise AI POC with Microsoft, next propositions and what we learned', who: 'Mohamed and Dani' },
+            { label: 'AI', icon: 'BrainCircuit', tab: 'ai/learned', line: 'What we learned, the Microsoft POC and enablement, and the path to value', who: 'Mohamed and Dani' },
           ],
         },
       ],

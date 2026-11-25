@@ -395,7 +395,8 @@ function Arch({ b, open }) {
         <div className="arch-core">
           <span className="kicker">{b.core.kicker}</span>
           <b>{b.core.name}</b>
-          <MiniOrg />
+          {b.core.icon ? <span className="arch-core-ico"><Icon name={b.core.icon} size={44} /></span> : <MiniOrg />}
+          {b.core.sub && <small className="arch-core-sub">{b.core.sub}</small>}
           {b.core.status && <Pill s={b.core.status} text={b.core.statusText} />}
         </div>
         <div className="arch-flow"><i /><i /><i /><i /></div>

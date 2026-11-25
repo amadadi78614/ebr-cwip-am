@@ -44,24 +44,35 @@ const TRANSFORMATION = {
 }
 
 const AI_PROPOSITIONS = {
-  id: 'ai', label: 'AI propositions', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'AI propositions for Finance and Asset Management',
+  id: 'ai', label: 'AI propositions', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'Microsoft AI solution leads the AI propositions',
   blocks: [
     {
-      type: 'cards', span: 12, rows: 6, cols: 3,
-      title: 'Six realistic AI propositions · built on the automation already in place · click for detail',
+      type: 'arch', span: 8, rows: 6, title: 'Microsoft AI solution · contract operationalisation in SAP · click an outcome',
+      sources: [
+        { icon: 'FileText', name: 'Signed contracts', sub: 'Real Telkom contracts' },
+        { icon: 'Database', name: 'SAP data', sub: 'Vendors and conditions' },
+      ],
+      core: { kicker: 'Microsoft Foundry · built by Capgemini', name: 'ContractOps', icon: 'BrainCircuit', sub: 'Built · moving to Microsoft POC', status: 'progress', statusText: 'Microsoft POC' },
+      outputs: [
+        { icon: 'ScanText', name: 'Terms extracted', metric: 'Rates, dates', detail: { text: 'AI reads each signed contract and pulls out pricing, escalations, dates and obligations into a structured record.', rows: [['Today', 'Read and keyed by hand'], ['Control', 'Person confirms each extract']] } },
+        { icon: 'Settings2', name: 'SAP set-up', metric: 'For approval', detail: { text: 'Prepares the SAP contract and condition set-up from the extracted terms, for a person to approve before it is loaded.', rows: [['Benefit', 'Faster, consistent contract set-up']] } },
+        { icon: 'ShieldCheck', name: 'Invoice vs contract', metric: 'Before payment', detail: { text: 'Compares invoiced rates and escalations with the contract and flags differences before payment is released.', rows: [['Benefit', 'Stops over-payments at source']] } },
+        { icon: 'BellRing', name: 'Obligation alerts', metric: 'Renewals', detail: { text: 'Warns owners ahead of renewals, expiries and escalation dates.', rows: [['Benefit', 'No missed renewals or escalations']] } },
+      ],
+    },
+    {
+      type: 'cards', span: 4, rows: 6, cols: 1, list: true, title: 'Next AI propositions · click for detail',
       items: [
-        { icon: 'GitCompareArrows', name: 'AI on reconciliation exceptions', line: 'F&A · Rules clear the matches; AI explains and suggests a fix for the breaks', status: 'planned', statusText: 'H2 · proof of value',
-          detail: { text: 'Rules-based matching first, then AI on the exceptions: likely cause, suggested journal, human approval before posting.', rows: [['Starts with', 'One account, after SingleView and FAM balances are live'], ['Builds on', 'Wholesale recon automation and the AR recon tracker']] } },
-        { icon: 'ScanText', name: 'Touchless AP invoice processing', line: 'F&A · Invoices read, validated and posted without keying', status: 'test', statusText: 'UAT done',
-          detail: { text: 'AI reads the invoice, validates it against PO and vendor master, and routes only exceptions to a person.', rows: [['Now', 'UAT completed in H1'], ['Next', 'Production and exception-rate tracking']] } },
-        { icon: 'FileSignature', name: 'Contract operationalisation in SAP', line: 'F&A · Contract terms turned into SAP set-up, checked before payment', status: 'planned', statusText: 'POC proposed',
-          detail: { text: 'Microsoft AI reads the signed contract, extracts rates, dates and obligations, and prepares the SAP set-up for approval.', rows: [['Partner', 'Microsoft'], ['Needs', 'Microsoft enterprise AI access for Shared Services']] } },
-        { icon: 'TrendingUp', name: 'Capitalisation forecast', line: 'AM · See the year-end conversion gap months earlier', status: 'planned', statusText: 'Next 90 days',
-          detail: { text: 'Uses multi-year AUC life-cycle data to forecast capitalisation by BU and region, measured against actuals.', rows: [['Builds on', 'AUC life-cycle analytics'], ['Measure', 'Forecast vs actual each month']] } },
-        { icon: 'AlertTriangle', name: 'FNLD and on-hold risk signals', line: 'AM · Flags projects likely to miss capitalisation, with an owner', status: 'planned', statusText: 'Next',
-          detail: { text: 'Scores open projects on age, spend pattern, FNLD and hold status, and sends the riskiest to the BU owner.', rows: [['Focus', 'CIM, CIO and prior-year balances']] } },
-        { icon: 'FileText', name: 'Automated MBR commentary', line: 'AM and F&A · First-draft commentary in minutes; people review and sign', status: 'planned', statusText: '1–3 years',
-          detail: { text: 'Drafts the monthly variance commentary from the capital and finance data; the accountant edits and approves.', rows: [['Guardrail', 'Human sign-off on every report']] } },
+        { icon: 'GitCompareArrows', name: 'AI on recon exceptions', line: 'F&A · AI explains the breaks', status: 'planned', statusText: 'H2 proof',
+          detail: { text: 'Rules-based matching first, then AI on the exceptions: likely cause, suggested journal, human approval before posting.', rows: [['Starts with', 'One account, after SingleView and FAM balances are live']] } },
+        { icon: 'Receipt', name: 'Touchless AP', line: 'F&A · invoices without keying', status: 'test', statusText: 'UAT done',
+          detail: { text: 'AI reads the invoice, validates it against PO and vendor master, and routes only exceptions to a person.' } },
+        { icon: 'TrendingUp', name: 'Capitalisation forecast', line: 'AM · gap seen months earlier', status: 'planned', statusText: 'Next 90 days',
+          detail: { text: 'Uses multi-year AUC life-cycle data to forecast capitalisation by BU and region, measured against actuals.' } },
+        { icon: 'AlertTriangle', name: 'FNLD and hold risk signals', line: 'AM · projects likely to slip', status: 'planned', statusText: 'Next',
+          detail: { text: 'Scores open projects on age, spend pattern, FNLD and hold status, and sends the riskiest to the BU owner.' } },
+        { icon: 'FileText', name: 'MBR commentary drafts', line: 'AM and F&A · people sign off', status: 'planned', statusText: '1–3 years',
+          detail: { text: 'Drafts the monthly variance commentary from the capital and finance data; the accountant edits and approves.' } },
       ],
     },
   ],

@@ -79,12 +79,26 @@ const AI_PROPOSITIONS = {
 }
 
 const ANALYTICS = {
-  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Asset Management',
+  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics moving up the data maturity curve, into AI',
   blocks: [
     { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
     { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
     { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Asset Management · capital work in progress' },
-    { ...blk(finAna, 'rings'), span: 12, rows: 2, size: 72, items: blk(finAna, 'rings').items.map(r => r.pct === 100 ? { ...r, label: 'Predictive', sub: 'Hindsight, insight, foresight' } : r) },
+    {
+      type: 'track', span: 12, rows: 1, at: 3, title: 'Data maturity · hindsight to controlled execution · next frontier: prescriptive, then cognitive (agentic)',
+      steps: ['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive · agentic'],
+    },
+    {
+      type: 'cards', span: 12, rows: 2, cols: 3, list: true, title: 'What we learned since June · AI in a governed enterprise · click for detail',
+      items: [
+        { icon: 'KeyRound', name: 'Enterprise AI needs the right tools', line: 'Telkom AI licences not yet broadly provisioned', status: 'confirm', statusText: 'Ask',
+          detail: { text: 'Delivery teams cannot reach advanced capabilities, which limits experimentation and workflow integration at scale.', rows: [['Ask', 'Microsoft enterprise AI access for Shared Services']] } },
+        { icon: 'Workflow', name: 'Value comes from the workflow', line: 'Personal productivity does not scale on its own', status: 'live', statusText: 'Learned',
+          detail: { text: 'About 80% report better individual productivity, but only 7% scale AI across the enterprise (McKinsey, Deloitte). Value comes from embedding intelligence in real, governed workflows.' } },
+        { icon: 'Scale', name: 'Invest per use case', line: 'Defined case, measurable value, then infrastructure', status: 'planned', statusText: 'Proposed',
+          detail: { text: 'Tie investment to defined business use cases and evidence of value. Where a case needs more than the standard AI framework, evaluate contained AI infrastructure.' } },
+      ],
+    },
   ],
 }
 

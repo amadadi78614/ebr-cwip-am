@@ -460,3 +460,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 @media (max-width:1440px){.steps-nav.dense{gap:0}.steps-nav.dense button{padding:6px 8px;gap:5px;font-size:11.5px}}
 .title{white-space:nowrap;flex-shrink:0}
 @media (max-width:1440px){.domains button{padding:8px 10px;font-size:12.5px}.top{gap:16px}}
+.domains{overflow-x:auto;scrollbar-width:none;min-width:0}.domains::-webkit-scrollbar{display:none}
+@media (max-width:1240px){.title p{display:none}.title h1{font-size:15px}}
+@media (max-width:1080px){.title{display:none}}

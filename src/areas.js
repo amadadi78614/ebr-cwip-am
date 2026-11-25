@@ -53,26 +53,6 @@ const ANALYTICS = {
   ],
 }
 
-const TA = {
-  key: 'transformation',
-  domain: 'Transformation & Analytics',
-  period: 'H1 FY27',
-  accent: '#0070AD',
-  accent2: '#009FE3',
-  source: 'Capgemini Transformation and Analytics · H1 FY27',
-  tabs: [
-    {
-      id: 'agenda', label: 'Agenda', title: 'Transformation and Analytics · Finance and Asset Management',
-      blocks: [{
-        type: 'agenda', span: 12, rows: 4, items: [
-          { label: 'Transformation', icon: 'Sparkles', tab: 'transformation', line: 'Automation and AI for Finance and Asset Management', who: 'Mohamed Nomani' },
-          { label: 'Analytics', icon: 'BarChart3', tab: 'analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
-        ],
-      }],
-    },
-    TRANSFORMATION,
-    ANALYTICS,
-  ],
-}
+const area = (key, domain, page) => ({ key, domain, period: 'H1 FY27', accent: '#0070AD', accent2: '#009FE3', source: 'Capgemini ' + domain + ' · H1 FY27', tabs: [page] })
 
-export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Asset Management & Project Accounting' }, TA]
+export const DOMAINS = [OVERVIEW, { ...strip(FIN), domain: 'Finance & Accounting' }, { ...strip(AM), domain: 'Asset Management & Project Accounting' }, area('transformation', 'Transformation', TRANSFORMATION), area('analytics', 'Analytics', ANALYTICS)]

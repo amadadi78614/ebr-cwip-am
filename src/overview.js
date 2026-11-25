@@ -23,7 +23,7 @@ const OVERVIEW = {
             { label: 'Finance & Accounting', icon: 'Wallet', tab: 'finance/agenda', line: 'Since last EBR, H1 highlights, H2 focus areas, way forward', who: 'Claude Naidu' },
             { label: 'Asset Management & Project Accounting', icon: 'Landmark', tab: 'cwip/agenda', line: 'Capital performance, portfolio, business units, asset verification', who: 'Hannes Joubert' },
             { label: 'Transformation', icon: 'Sparkles', tab: 'transformation/transformation', line: 'Automation and AI for Finance and Asset Management', who: 'Mohamed Nomani' },
-            { label: 'Analytics', icon: 'BarChart3', tab: 'transformation/analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
+            { label: 'Analytics', icon: 'BarChart3', tab: 'analytics/analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
           ],
         },
       ],

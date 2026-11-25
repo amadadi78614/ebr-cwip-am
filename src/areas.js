@@ -46,9 +46,9 @@ const TRANSFORMATION = {
 const AI_LEARNED = {
   id: 'learned', label: 'What we learned', owner: { name: 'Mohamed Nomani · Dani Viljoen', role: 'Capgemini Transformation and Analytics' }, title: 'What we learned: enterprise value comes from shared AI, not individual helpers',
   blocks: [
-    { type: 'image', span: 12, rows: 5, title: 'Two ways AI shows up at work', src: '/ai-two-ways.png', alt: 'Individual AI assistant compared with a shared AI agent in an AI harness' },
+    { type: 'image', span: 8, title: 'Two ways AI shows up at work', src: '/ai-two-ways.png', alt: 'Individual AI assistant compared with a shared AI agent in an AI harness' },
     {
-      type: 'cards', span: 12, rows: 2, cols: 3, list: true, title: 'What we learned since June · AI in a governed enterprise · click for detail',
+      type: 'cards', span: 4, cols: 1, list: true, title: 'What we learned since June',
       items: [
         { icon: 'KeyRound', name: 'Enterprise AI needs the right tools', line: 'Telkom AI licences not yet broadly provisioned', status: 'confirm', statusText: 'Ask',
           detail: { text: 'Delivery teams cannot reach advanced capabilities, which limits experimentation and workflow integration at scale.', rows: [['Ask', 'Microsoft enterprise AI access for Shared Services']] } },

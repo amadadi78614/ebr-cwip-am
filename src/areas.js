@@ -46,7 +46,7 @@ const TRANSFORMATION = {
 const AI_LEARNED = {
   id: 'learned', label: 'What we learned', owner: { name: 'Mohamed Nomani · Dani Viljoen', role: 'Capgemini Transformation and Analytics' }, title: 'What we learned: enterprise value comes from shared AI, not individual helpers',
   blocks: [
-    { type: 'image', span: 12, rows: 7, title: 'Two ways AI shows up at work', src: '/ai-two-ways.png', alt: 'Individual AI assistant compared with a shared AI agent in an AI harness' },
+    { type: 'image', span: 12, rows: 4, title: 'Two ways AI shows up at work', src: '/ai-two-ways.png', alt: 'Individual AI assistant compared with a shared AI agent in an AI harness' },
     {
       type: 'cards', span: 12, rows: 2, cols: 3, list: true, title: 'What we learned since June · AI in a governed enterprise · click for detail',
       items: [

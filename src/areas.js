@@ -18,25 +18,40 @@ const strip = c => ({
 const tab = (c, id) => c.tabs.find(t => t.id === id)
 const blk = (t, type) => t.blocks.find(b => b.type === type)
 
-// Automation and Transformation/AI on one page per area.
-const merged = (c, suffix, label, layout) => {
-  const rpa = tab(c, 'rpa'), ai = tab(c, 'ai')
-  return { ...ai, id: 'ai-' + suffix, label, title: ai.title, blocks: layout(rpa, ai) }
+// One Transformation page and one Analytics page covering both areas.
+const SHORT = {
+  'Combined TB reports': 'Consolidation benefit', 'All monthly payments': 'Batch files · month-end TAT',
+  'FAS PayPro files': '~8 hours saved', 'Debit order look-up': '~8 hours saved', 'Daily BTM files': '~4 hours a month',
+  'Age analysis extracts': 'SAP extract, centralised', 'Rebate split per BU': 'Openserve to Telkom split', 'NEDLMP report extraction': 'Bulk view of uploads',
 }
-const take = (c, id, suffix, label) => ({ ...tab(c, id), id: id + '-' + suffix, label })
+const compact = b => ({ ...b, items: b.items.map(({ metric, team, ...x }) => ({ ...x, line: SHORT[x.name] || x.line })) })
+const finRpa = tab(FIN, 'rpa'), amRpa = tab(AM, 'rpa'), finAna = tab(FIN, 'analytics'), amAna = tab(AM, 'analytics')
 
-const FA_AI = merged(FIN, 'fa', 'Automation and AI · F&A', (rpa, ai) => [
-  { ...blk(rpa, 'cards'), span: 12, rows: 3, cols: 4, title: '8 digital interventions · 1 completed, 3 in progress, 4 in pipeline · ~20 hours a month targeted' },
-  { ...blk(ai, 'waves'), big: false, span: 12, rows: 2, title: 'Automation to AI · done, under way, next',
-    items: blk(ai, 'waves').items.map(w => ({ ...w, items: w.items.map(x => x
-      .replace('Wholesale reconciliation automation, once SingleView and FAM balances are live', 'Wholesale recon automation, after SingleView and FAM go live')
-      .replace(' (with Analytics)', '')) })) },
-])
-const AM_AI = merged(AM, 'am', 'Automation and AI · AM', (rpa, ai) => [
-  { ...blk(rpa, 'cards'), span: 8, rows: 4, cols: 3, title: 'Automation projects · click for detail' },
-  { ...blk(rpa, 'shift'), span: 4, rows: 4 },
-  { ...blk(ai, 'waves'), big: false, span: 12, rows: 3, title: 'Automation to AI · done, under way, next 90 days' },
-])
+const TRANSFORMATION = {
+  id: 'transformation', label: 'Transformation', owner: { name: 'Mohamed Nomani', role: 'Capgemini Transformation' }, title: 'Automation to AI across Finance and Asset Management',
+  blocks: [
+    { ...compact(blk(finRpa, 'cards')), span: 7, rows: 3, cols: 2, list: true, title: 'Finance & Accounting · 8 interventions · ~20 hours a month targeted' },
+    { ...blk(amRpa, 'cards'), span: 5, rows: 3, cols: 1, list: true, title: 'Asset Management · electronic verification 34% to 59%' },
+    {
+      type: 'waves', span: 12, rows: 2, title: 'Automation to AI · done, under way, next',
+      items: [
+        { when: 'Done · live at Telkom', name: 'Delivered', tone: 'done', items: ['F&A: Combined TB reports · Touchless AP UAT completed', 'AM: electronic asset verification on 4 technologies', 'AM: AUC life-cycle analytics'] },
+        { when: 'Under way', name: 'Being delivered now', tone: 'doing', items: ['F&A: payment batch files, PayPro, debit order look-up', 'AM: NCAS electronic verification (5 networks)', 'AM: capex extraction to production'] },
+        { when: 'H2 · next', name: 'What we will prove next', tone: 'next', items: ['F&A: wholesale recon automation after SingleView and FAM', 'F&A: AI on reconciliation exceptions, one account', 'AM: capitalisation forecast on AUC history'] },
+      ],
+    },
+  ],
+}
+
+const ANALYTICS = {
+  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Asset Management',
+  blocks: [
+    { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
+    { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
+    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Asset Management · capital work in progress' },
+    { ...blk(finAna, 'rings'), span: 12, rows: 2, size: 72, items: blk(finAna, 'rings').items.map(r => r.pct === 100 ? { ...r, label: 'Predictive', sub: 'Hindsight, insight, foresight' } : r) },
+  ],
+}
 
 const TA = {
   key: 'transformation',
@@ -50,17 +65,13 @@ const TA = {
       id: 'agenda', label: 'Agenda', title: 'Transformation and Analytics · Finance and Asset Management',
       blocks: [{
         type: 'agenda', span: 12, rows: 4, items: [
-          { label: 'Automation and AI · Finance & Accounting', icon: 'Bot', tab: 'ai-fa', line: 'Eight digital interventions, ~20 hours a month targeted · next: AI-assisted reconciliation', who: 'Capgemini Transformation' },
-          { label: 'Automation and AI · Asset Management', icon: 'Sparkles', tab: 'ai-am', line: 'Electronic verification 34% to 59% · next: capitalisation forecast', who: 'Capgemini Transformation' },
-          { label: 'Analytics · Finance & Accounting', icon: 'BarChart3', tab: 'analytics-fa', line: 'Bank balance, cash flow and SLA models live · AR recon tracker next', who: 'Capgemini Analytics' },
-          { label: 'Analytics · Asset Management', icon: 'LineChart', tab: 'analytics-am', line: 'Capital work in progress, visible every month', who: 'Capgemini Analytics' },
+          { label: 'Transformation', icon: 'Sparkles', tab: 'transformation', line: 'Automation and AI for Finance and Asset Management', who: 'Mohamed Nomani' },
+          { label: 'Analytics', icon: 'BarChart3', tab: 'analytics', line: 'Models and dashboards for Finance and Asset Management', who: 'Dani Viljoen' },
         ],
       }],
     },
-    FA_AI,
-    AM_AI,
-    take(FIN, 'analytics', 'fa', 'Analytics · F&A'),
-    take(AM, 'analytics', 'am', 'Analytics · AM'),
+    TRANSFORMATION,
+    ANALYTICS,
   ],
 }
 

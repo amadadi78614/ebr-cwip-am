@@ -115,14 +115,42 @@ const AI_PATH = {
 }
 
 const ANALYTICS = {
-  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: 'Analytics across Finance and Fixed Assets',
+  id: 'analytics', label: 'Analytics', owner: finAna.owner, title: '6 months in review: building a data-driven finance engine',
   blocks: [
-    { ...finAna.blocks[0], span: 4, rows: 3, title: 'Finance & Accounting · live' },
-    { ...finAna.blocks[1], span: 4, rows: 3, title: 'Finance & Accounting · in progress' },
-    { ...compact(blk(amAna, 'cards')), span: 4, rows: 3, cols: 1, list: true, title: 'Fixed Assets · capital work in progress' },
     {
-      type: 'track', span: 12, rows: 1, at: 3, title: 'Data maturity · hindsight to controlled execution · next frontier: prescriptive, then cognitive (agentic)',
-      steps: ['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive · agentic'],
+      type: 'cards', span: 4, cols: 1, list: true, title: 'Completed · click for detail',
+      items: [
+        { icon: 'CalendarClock', name: 'System forecasting', line: 'Earlier visibility of committed cash', status: 'live', statusText: 'Completed',
+          detail: { text: 'Daily-refreshed view of logged-unpaid, paid and total committed cash, compared with the model forecast to expose projected vs in-system differences.' } },
+        { icon: 'BrainCircuit', name: 'Prediction model enhancements', line: 'More reliable forecast inputs', status: 'live', statusText: 'Completed',
+          detail: { text: 'Updated machine-learning logic to improve forecasting performance; the enhanced logic is now being validated.' } },
+        { icon: 'Layers', name: 'AUC analytics model', line: 'Less reporting effort, better insight', status: 'live', statusText: 'Completed',
+          detail: { text: 'Reports on capital work in progress: open capital projects, accumulated costs and ageing. Supports timely capitalisation, accurate reporting and visibility of long-outstanding CWIP balances.' } },
+      ],
+    },
+    {
+      type: 'cards', span: 4, cols: 1, list: true, title: 'In progress · click for detail',
+      items: [
+        { icon: 'Smartphone', name: 'Enterprise / Consumer receipts', line: 'Accurate allocation, better accountability', status: 'progress',
+          detail: { text: 'Improves mobile-receipt allocation by customer segment, reducing misallocations and reconciliation effort.' } },
+        { icon: 'ListChecks', name: 'Accounts receivable (open vs cleared)', line: 'Stronger collections and working capital decisions', status: 'progress',
+          detail: { text: 'Separates cleared and open AR items to improve outstanding-balance visibility, collections focus and forecast accuracy.' } },
+        { icon: 'Store', name: 'Consumer dealer reporting automation', line: 'Efficiency now, AI potential later', status: 'progress',
+          detail: { text: 'Reduces the time to produce dealer commission reports, and improves the timing and accuracy of monthly commission provisions.' } },
+        { icon: 'Network', name: 'Sales hierarchy tool', line: 'Accurate allocation of dealer sales', status: 'progress',
+          detail: { text: 'Improves the creation and modification of user hierarchy allocation data.' } },
+      ],
+    },
+    {
+      type: 'cards', span: 4, cols: 1, list: true, title: 'Maintained · protecting the analytical backbone',
+      items: [
+        { icon: 'Plane', name: 'Travel analytics', line: 'Spend and activity trends', status: 'complete', statusText: 'Maintained' },
+        { icon: 'Timer', name: 'TBI analytics', line: 'Status and deadline prioritisation', status: 'complete', statusText: 'Maintained' },
+        { icon: 'GitCompareArrows', name: 'AR reconciliations', line: 'Ageing and unreconciled item control', status: 'complete', statusText: 'Maintained' },
+        { icon: 'BarChart3', name: 'OMS dashboard', line: 'Volumes, statuses, turnaround times', status: 'complete', statusText: 'Maintained' },
+        { icon: 'Mail', name: 'TOMS mailbox', line: 'Response time and resolution', status: 'complete', statusText: 'Maintained' },
+        { icon: 'Gauge', name: 'F&A / HR SLA', line: 'Performance vs service targets', status: 'complete', statusText: 'Maintained' },
+      ],
     },
   ],
 }

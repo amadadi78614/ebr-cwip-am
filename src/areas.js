@@ -46,17 +46,7 @@ const TRANSFORMATION = {
 const AI_LEARNED = {
   id: 'learned', label: 'What we learned', owner: { name: 'Mohamed Nomani · Dani Viljoen', role: 'Capgemini Transformation and Analytics' }, title: 'What we learned: enterprise value comes from shared AI, not individual helpers',
   blocks: [
-    {
-      type: 'waves', span: 12, rows: 4, title: 'Two ways AI shows up at work',
-      items: [
-        { when: '1 · Individual AI assistant', name: 'A smart friend one person asks for help', tone: 'doing',
-          items: ['Great personal output', 'Creates a bottleneck: everyone asks that one person', 'Not scalable for the team'],
-          foot: 'One person has the AI helper; everyone else depends on them.' },
-        { when: '2 · Shared AI agent in an AI harness', name: 'A virtual team member everyone can access', tone: 'done',
-          items: ['Knowledge, data and workflows: rules, policies, systems, approvals', 'Shared access and consistent support', 'Embedded in team workflows and scalable across the team'],
-          foot: 'The AI becomes a shared virtual team member, accessible to all.' },
-      ],
-    },
+    { type: 'image', span: 12, rows: 7, title: 'Two ways AI shows up at work', src: '/ai-two-ways.png', alt: 'Individual AI assistant compared with a shared AI agent in an AI harness' },
     {
       type: 'cards', span: 12, rows: 2, cols: 3, list: true, title: 'What we learned since June · AI in a governed enterprise · click for detail',
       items: [
@@ -105,15 +95,9 @@ const AI_POC = {
 const AI_PATH = {
   id: 'path', label: 'Path to value', owner: { name: 'Mohamed Nomani · Dani Viljoen', role: 'Capgemini Transformation and Analytics' }, title: 'The path towards unlocking value within Shared Services',
   blocks: [
-    { type: 'track', span: 12, rows: 2, at: 3, title: 'How we propose to progress · architecture: Microsoft enterprise AI, hybrid, or local / enterprise-contained',
-      steps: ['Business problem', 'Use case', 'Prove value (POC)', 'Select architecture', 'Embed in workflow', 'Measure outcome'] },
-    { type: 'asks', span: 7, rows: 7, title: 'Executive sponsorship requested',
-      items: [
-        { text: 'Enable us within the existing enterprise ecosystem: Microsoft enterprise AI access', sub: 'So the Shared Services team can experiment, develop and embed approved capabilities into real workflows' },
-        { text: 'Create a pathway for specialised capability: controlled infrastructure investment', sub: 'Where a business case needs more than the standard enterprise AI framework, evaluate and fund contained AI infrastructure' },
-      ] },
+    { type: 'image', span: 8, title: 'How we propose to progress · executive sponsorship requested', src: '/ai-path.png', alt: 'Path from business problem to measured outcome, with the two sponsorship asks' },
     {
-      type: 'cards', span: 5, rows: 7, cols: 1, list: true, title: 'Next AI propositions · click for detail',
+      type: 'cards', span: 4, cols: 1, list: true, title: 'Next AI propositions · click for detail',
       items: [
         { icon: 'GitCompareArrows', name: 'AI on recon exceptions', line: 'F&A · AI explains the breaks', status: 'planned', statusText: 'H2 proof',
           detail: { text: 'Rules-based matching first, then AI on the exceptions: likely cause, suggested journal, human approval before posting.', rows: [['Starts with', 'One account, after SingleView and FAM balances are live']] } },
@@ -127,7 +111,6 @@ const AI_PATH = {
           detail: { text: 'Drafts the monthly variance commentary from the capital and finance data; the accountant edits and approves.' } },
       ],
     },
-    { type: 'lead', span: 12, rows: 2, icon: 'Handshake', text: 'Our commitment: tie investment to defined business use cases, measurable outcomes and evidence of value, not technology experimentation for its own sake.' },
   ],
 }
 

@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import AM from './data.js'
-import FIN from './finance.js'
-import OVERVIEW from './overview.js'
+import { DOMAINS } from './areas.js'
 import Block, { Icon, Pill } from './blocks.jsx'
 
-const DOMAINS = [OVERVIEW, AM, FIN]
 
 function parse() {
   const [d, t] = window.location.hash.slice(1).split('/')
